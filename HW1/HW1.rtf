@@ -1,0 +1,90 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww16240\viewh13140\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \\documentclass[12pt]\{article\}\
+\\usepackage\{fullpage\}\
+\\usepackage\{latexsym\}\
+\\newcommand\\tab[1][1cm]\{\\hspace*\{#1\}\}\
+\
+\\begin\{document\}\
+\
+\
+\\begin\{center\}\
+\{ \\Large \\bf CMPU 241 - Algorithmics\}\\\\\
+  \{\\bf Spring 2019 \\\\\
+ Assignment 1 -- Due February 5th, 2019\\\\\
+ \}\
+ \\vspace\{.15in\}\
+ NAME: Jonah Tuckman\
+\\end\{center\}\
+\\vspace\{.15in\}\
+\
+\\hrule\
+\\vspace\{10mm\}\
+\
+\\begin\{enumerate\}\
+\\item (10 points) Given the following algorithm:\
+\
+\\begin\{tabular\}\{l l\}\
+& \\\\\
+\\multicolumn\{2\}\{l\} \{\{\\sc Algorithm UniqueElements(A)\}\}\\\\\
+& \\\\\
+\\multicolumn\{2\}\{l\}\{\{\\bf Input:\}\\ \\ \\ \\ n-element array of numbers, A$[1\\dots n]$\} \\\\\
+\\multicolumn\{2\}\{l\}\{\{\\bf Output:\} Returns ``true" if all items are unique and ``false" otherwise \}\\\\\
+& \\\\\
+1. & \{\\bf for\} ( i $=$ 1 to n$-1$ ) \\\\\
+2. & \\hspace\{5mm\} \{\\bf for\} ( j $=$ i$+$1 to n ) \\\\\
+3. & \\hspace\{10mm\} \{\\bf if\} ( A[ i ] $==$ A[ j ] )  \{\\bf return\} false\\\\\
+4. & \{\\bf return\} true\\\\\
+\\end\{tabular\}\
+\
+\\vspace\{.25in\}\
+\
+\\begin\{enumerate\}\
+\\item Is there a difference in $T(n)$ (measured by number of operations executed) for best- and worst-case input?\\\\ \\\\\
+  If your answer is ``yes", give examples of best- and worst-case inputs. If your answer is ``no", explain why there is no difference between best- and worst-case inputs.\\\\\
+\
+Yes there is a difference between the best and worst case\
+input. For this algorithm to work the length of the input array A must be $>$ 1. Otherwise there would be an out of range error as j would be $i = 1 + 1 = 2$ which is not in range of the array of length 1. \\\\\
+\\\\\
+Best Case: The best case would be if the array A had the same value at index 0 and 1. This would then mean that the array does one single check and because the two values are indeed equal the loops breaks and return false rather than continuing to check.  \\\\ \
+\\\\\
+Worst Case: The worst case in this algorithm would be if the array A did indeed have all unique items. This would mean that each loop would have to run in completion before exiting with the return value of true. \
+\
+\\vspace\{25mm\}\
+\
+\\item Give the line number(s) of the basic operation.\\\\ \\\\  Express the running time using $\\theta$ notation if there is no difference between best-case and worst-case running times, or give best-case and worst-case asymptotic running time using O and $\\Omega$ if there is a difference.\\\\\
+\
+The line number for the basic operation is line 3. \\\\ \
+\\\\\
+Best Case: $T(n) = O(1) $ \\\\\
+    \\tab This is constant run time because there is one single loop for each. \\\\\
+    \\tab The loop breaks after the first comparison thus the data size will not \\\\\
+    \\tab influence the run time. \\\\\
+\\\\\
+Worst Case: $T(n) = \\Omega(n^2)$ \\\\\
+    \\tab Run time is omega of $n^2$ in the worst case because there are two complete \\\\\
+    \\tab loops that are being run. \\\\\
+    \\tab The loop in line 1 runs $n-1$ times (which we can assume to be n times. \\\\\
+    \\tab The loop in line 2 runs $n-1$ times which we will again call n times. \\\\\
+    \\tab Because both loops run n times, the total run time in the worst case\\\\\
+    \\tab when the program will run in both loops completely is $\\Omega(n^2).$\
+  \
+  \
+\\vspace\{10mm\}\
+\
+\
+\
+\\end\{enumerate\}\
+\
+\
+\\end\{enumerate\}\
+\
+\\end\{document\}\
+\
+\
+}
