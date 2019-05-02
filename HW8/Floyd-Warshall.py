@@ -57,9 +57,10 @@ def FloydsPiAlgo(diagram):
                     else:
                         diagram[i][j] = i
                 else:
-                    if((diagram[i][j] < diagram[i][k] + diagram[k][j])):
-                        diagram[i][j] = diagram[i][j]
-                    else:
+                    if(diagram[i][k] != None and
+                        diagram[k][j] != None and
+                        diagram[i][j] != None and
+                        diagram[i][k] + diagram[k][j] < diagram[i][j]):
                         diagram[i][j] = diagram[k][j]
         print("Pi(%7s)" % k)
         printDiagram(diagram)
