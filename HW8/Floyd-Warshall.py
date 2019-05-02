@@ -41,7 +41,7 @@ def FloydsDAlgo(diagram):
                 # check for min distance, update if lower than min
                 if((diagram[i][k] + diagram[k][j]) < diagram[i][j]):
                     diagram[i][j] = (diagram[i][k] + diagram[k][j])
-        print("D(%7s)" % k)
+        print("D(%d)" % k)
         printDiagram(diagram)
     # When exited final iteration, print the distance
     #printDiagram(distance)
@@ -62,7 +62,7 @@ def FloydsPiAlgo(diagram):
                         diagram[i][j] != None and
                         diagram[i][k] + diagram[k][j] < diagram[i][j]):
                         diagram[i][j] = diagram[k][j]
-        print("Pi(%7s)" % k)
+        print("Pi(%d)" % k)
         printDiagram(diagram)
 
 
@@ -76,7 +76,7 @@ def printDiagram(distance):
         for j in range(vertices):
             # Check for infinite values
             if (distance[i][j] == INFINITY):
-                print("%7s" % ("INF "), end = "")
+                print("%7s" % ("INF"), end = "")
             # If value is not infinite
             else:
                 print("%7s" % ( distance[i][j]), end = "")
