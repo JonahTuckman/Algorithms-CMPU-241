@@ -57,11 +57,11 @@ def FloydsPiAlgo(diagram):
                     else:
                         diagram[i][j] = i
                 else:
-                    if(diagram[i][k] != None and
-                        diagram[k][j] != None and
+                    if(diagram[i][k-1] != None and
+                        diagram[k-1][j] != None and
                         diagram[i][j] != None and
-                        diagram[i][k] + diagram[k][j] < diagram[i][j]):
-                        diagram[i][j] = diagram[k][j]
+                        diagram[i][k-1] + diagram[k-1][j] < diagram[i][j]):
+                        diagram[i][j] = diagram[k-1][j]
         print("Pi(%d)" % k)
         printDiagram(diagram)
 
