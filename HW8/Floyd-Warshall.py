@@ -6,20 +6,6 @@
 ### Infinity is huge number
 INFINITY = 999999999999
 
-##### INPUT #####
-D = [ [0, 2, INFINITY, 1, 8],
-        [6, 0, 3, 2, INFINITY],
-        [INFINITY, INFINITY, 0, 4, INFINITY],
-        [INFINITY, INFINITY, 2, 0, 3],
-        [3, INFINITY, INFINITY, INFINITY, 0]]
-
-TextBookTest = [
-        [0, 3, 8, INFINITY, -4],
-        [INFINITY, 0, INFINITY, 1, 7],
-        [INFINITY, 4, 0, INFINITY, INFINITY],
-        [2, INFINITY, -5, 0, INFINITY],
-        [INFINITY, INFINITY, INFINITY, 6, 0]
-]
 
 
 ## 5 vertices
@@ -83,8 +69,27 @@ def printDiagram(distance):
             if (j == vertices - 1):
                 print("]")
 
+def main():
+
+    ##### INPUT #####
+    D = [ [0, 2, INFINITY, 1, 8],
+            [6, 0, 3, 2, INFINITY],
+            [INFINITY, INFINITY, 0, 4, INFINITY],
+            [INFINITY, INFINITY, 2, 0, 3],
+            [3, INFINITY, INFINITY, INFINITY, 0]]
+
+    TextBookTest = [
+            [0, 3, 8, INFINITY, -4],
+            [INFINITY, 0, INFINITY, 1, 7],
+            [INFINITY, 4, 0, INFINITY, INFINITY],
+            [2, INFINITY, -5, 0, INFINITY],
+            [INFINITY, INFINITY, INFINITY, 6, 0]
+    ]
 ##FloydsDAlgo(TextBookTest)
 ## D algo confirmed working
-FloydsDAlgo(D)
-FloydsPiAlgo(TextBookTest)
-##FloydsPiAlgo(D)
+    FloydsDAlgo(D)
+    FloydsPiAlgo(TextBookTest)
+##Flo
+
+if __name__ == "__main__":
+    main()
