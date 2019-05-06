@@ -57,6 +57,7 @@ def main():
     print("")
     Print_Optimal_Parens(s,0,3)
     print("")
+    
 
 
 if __name__ == "__main__":
