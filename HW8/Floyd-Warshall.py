@@ -3,6 +3,8 @@
 ## All pairs shortest path problem
 ## Find shortest distance between every pair of vertices
 
+import numpy as np
+
 ### Infinity is huge number
 INFINITY = 999999999999
 
@@ -11,13 +13,20 @@ INFINITY = 999999999999
 ## 5 vertices
 vertices = 5
 
+
 ## Function to print D()
-def FloydsDAlgo(diagram):
+def FloydsAlgo(diagram):
     # 2D distance array is return value
     ## Initial min distance for each vertice
     ## Finds distance between i and j
-
-                                                            ## vertice in distance array
+    pi = np.zeros((vertices, vertices))
+    for i in range(vertices):
+        for j in range(vertices):
+            if((i == j) or (diagram[i][j] == INFINITY)):
+                pi[i][j] = None
+            else:
+                pi[i][j] = i
+                                                                            ## vertice in distance array
     ## Loop through entirity of the diagram with 5 vertices
     for k in range(vertices):
         # iterate through and allow each vertice to be the source of the distance calculation
@@ -27,30 +36,14 @@ def FloydsDAlgo(diagram):
                 # check for min distance, update if lower than min
                 if((diagram[i][k] + diagram[k][j]) < diagram[i][j]):
                     diagram[i][j] = (diagram[i][k] + diagram[k][j])
+                    pi[i][j] = pi[k][j]
+
         print("D(%d)" % k)
         printDiagram(diagram)
+        print("Pi(%d)" % k)
+        printDiagram(pi)
     # When exited final iteration, print the distance
     #printDiagram(distance)
-## Function to print pi()
-def FloydsPiAlgo(diagram):
-    ## Initialize Pi matrix
-    for k in range(vertices):
-        for i in range(vertices):
-            for j in range(vertices):
-                if(k == 0):
-                    if((i == j) or (diagram[i][j] == INFINITY)):
-                        diagram[i][j] = None
-                    else:
-                        diagram[i][j] = i
-                else:
-                    if(diagram[i][k-1] != None and
-                        diagram[k-1][j] != None and
-                        diagram[i][j] != None and
-                        diagram[i][k-1] + diagram[k-1][j] < diagram[i][j]):
-                        diagram[i][j] = diagram[k-1][j]
-        print("Pi(%d)" % k)
-        printDiagram(diagram)
-
 
 
 
@@ -87,8 +80,11 @@ def main():
     ]
 ##FloydsDAlgo(TextBookTest)
 ## D algo confirmed working
-    FloydsDAlgo(D)
-    FloydsPiAlgo(TextBookTest)
+
+    #floydSCIPYAlgo(TextBookTest)
+
+    FloydsDAlgo(TextBookTest)
+    #FloydsPiAlgo(TextBookTest)
 ##Flo
 
 if __name__ == "__main__":
