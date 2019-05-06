@@ -1,6 +1,6 @@
 ### Matrix-Chain-Order
-import numpy as np
-from numpy import array
+#import numpy as np
+#from numpy import array
 
 INFINITY = 999999999999
 
@@ -18,13 +18,13 @@ def MatrixChainOrder(p):
         m[i][i] = 0
 
     # Find the shortest matrix cost
-    for l in range(2, n+1):
-        for i in range(0, n - l + 1):
-            j = i + l - 1
+    for l in range(1, n):
+        for i in range(0, n - l):
+            j = i + l
             m[i][j] = INFINITY
             for k in range(i, j):
                 q = m[i][k] + m[k+1][j] + p[i]*p[k+1]*p[j+1]
-                if q < m[i][j]:
+                if (q < m[i][j]):
                     m[i][j] = q
                     s[i][j] = k
 
@@ -32,12 +32,12 @@ def MatrixChainOrder(p):
 
 def Print_Optimal_Parens(s, i, j):
     if i == j:
-        print("A_%d" % i)
+        print("A_%d" % i, end = "")
     else:
-        print("(")
+        print("(", end = "")
         Print_Optimal_Parens(s, i, s[i][j])
         Print_Optimal_Parens(s, s[i][j] + 1, j)
-        print(")")
+        print(")", end = "")
 
 
 def main():
@@ -47,9 +47,16 @@ def main():
 
     m, s =  MatrixChainOrder(p)
 
-    print(m)
-    print(s)
-    Print_Optimal_Parens(s,1,4)
+    print("M Matrix")
+    for i in m:
+        print(i)
+    print("")
+    print("S Matrix")
+    for i in s:
+        print(i)
+    print("")
+    Print_Optimal_Parens(s,0,3)
+    print("")
 
 
 if __name__ == "__main__":
