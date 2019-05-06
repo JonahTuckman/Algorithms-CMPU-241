@@ -71,6 +71,7 @@ def main():
             [INFINITY, INFINITY, 2, 0, 3],
             [3, INFINITY, INFINITY, INFINITY, 0]]
 
+    ##### Example input from textbook used to check against their output ####
     TextBookTest = [
             [0, 3, 8, INFINITY, -4],
             [INFINITY, 0, INFINITY, 1, 7],
