@@ -78,14 +78,11 @@ def main():
             [2, INFINITY, -5, 0, INFINITY],
             [INFINITY, INFINITY, INFINITY, 6, 0]
     ]
-##FloydsDAlgo(TextBookTest)
-## D algo confirmed working
 
-    #floydSCIPYAlgo(TextBookTest)
-
-    FloydsDAlgo(TextBookTest)
-    #FloydsPiAlgo(TextBookTest)
-##Flo
+## Algo confirmed working
+    #FloydsAlgo(TextBookTest)
+## Input function call
+    FloydsAlgo(D)
 
 if __name__ == "__main__":
     main()
