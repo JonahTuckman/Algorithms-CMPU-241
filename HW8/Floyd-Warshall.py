@@ -83,7 +83,7 @@ def main():
 ## Algo confirmed working
     #FloydsAlgo(TextBookTest)
 ## Input function call
-    FloydsAlgo(D)
+    FloydsAlgo(TextBookTest)
 
 if __name__ == "__main__":
     main()
